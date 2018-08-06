@@ -28,7 +28,7 @@ function get_ip() {
 
 
 // Insertion du message à l'aide d'une requête préparée (une autre méthode existe )
-$req = $bdd->prepare('INSERT INTO miniChat.minichat (pseudo, message, adresse_ip, user_agent, date_) VALUES(?, ?, ?, ?, NOW())');
+$req = $bdd->prepare('INSERT INTO minichat (pseudo, message, adresse_ip, user_agent, date_) VALUES(?, ?, ?, ?, NOW())');
     $req->execute(array($_POST['pseudo'], $_POST['message'], get_ip(), $_SERVER['HTTP_USER_AGENT']));
 
 
