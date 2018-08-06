@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  lun. 06 août 2018 à 11:38
+-- Généré le :  lun. 06 août 2018 à 12:26
 -- Version du serveur :  10.1.34-MariaDB
 -- Version de PHP :  7.2.7
 
@@ -45,6 +45,24 @@ INSERT INTO `minichat` (`id`, `pseudo`, `message`, `adresse_ip`, `user_agent`, `
 (283, ' estelleGrange', 'salut', '192.168.1.5', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0', '2018-08-06 11:24:01'),
 (286, ' estelleGrange', 'bienvenue sur le projet Mini Chat, n\'hésitez pas à échanger ! ', '192.168.1.5', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0', '2018-08-06 11:26:11');
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+CREATE TABLE `users` (
+  `pseudo` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `color` varchar(255) CHARACTER SET utf8 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`pseudo`, `color`) VALUES
+(' estelleGrange', '#75d86c');
+
 --
 -- Index pour les tables déchargées
 --
@@ -54,6 +72,12 @@ INSERT INTO `minichat` (`id`, `pseudo`, `message`, `adresse_ip`, `user_agent`, `
 --
 ALTER TABLE `minichat`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`pseudo`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
